@@ -17,6 +17,9 @@ class MealsScreen extends StatelessWidget {
       itemCount: meals.length,
       itemBuilder: (context, index) => Text(
         meals[index].title,
+        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+              color: Theme.of(context).colorScheme.onBackground,
+            ),
       ),
     );
 
@@ -26,14 +29,14 @@ class MealsScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'No meals found!',
+              'No meals found :(',
               style: Theme.of(context).textTheme.headlineLarge!.copyWith(
                     color: Theme.of(context).colorScheme.onBackground,
                   ),
             ),
             const SizedBox(height: 16),
             Text(
-              'Try selecting a different category!',
+              'Try selecting a different category',
               style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                     color: Theme.of(context).colorScheme.onBackground,
                   ),
@@ -42,6 +45,7 @@ class MealsScreen extends StatelessWidget {
         ),
       );
     }
+
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
